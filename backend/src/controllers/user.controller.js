@@ -315,6 +315,5 @@ export {
     updateUserRole,
     updateUserStatus,
     getUserActivity,
-    updateAvatar,
-    getUserActivity
+    updateAvatar
 };
