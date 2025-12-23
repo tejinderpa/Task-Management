@@ -1,0 +1,110 @@
+# =====================================================
+# Root .gitignore for Task Management System
+# =====================================================
+
+# Environment Variables (IMPORTANT - Never commit secrets!)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.*.local
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directories
+coverage/
+*.lcov
+.nyc_output
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.vite/
+.eslintcache
+.stylelintcache
+
+# TypeScript
+*.tsbuildinfo
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# MongoDB data (if running locally)
+data/
+mongo-data/
+
+# Docker volumes
+docker-data/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# SSL Certificates (Don't commit private keys!)
+*.pem
+*.key
+*.crt
+*.cert
+
+# Deployment files
+.vercel
+.netlify
+
+# Testing
+.nyc_output/
+coverage/
+
+# Misc
+.env.backup
+package-lock.json.bak
