@@ -194,7 +194,7 @@ This system design ensures the application can scale from **hundreds to millions
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/tejinderpa/Task-Management.git
 cd "Task Management"
 ```
 
@@ -576,7 +576,48 @@ This error handling strategy demonstrates **production-ready engineering** and s
 docker-compose up -d
 ```
 
-#### Manual Deployment
+## 🚀 Deployment to Production
+
+**🎯 Want to deploy your application? Follow our Quick Deployment Guide!**
+
+### ⚡ Fastest Way to Deploy (FREE - 30 minutes)
+
+We've created a comprehensive step-by-step guide for deploying your application to production:
+
+📘 **[DEPLOYMENT_QUICKSTART.md](DEPLOYMENT_QUICKSTART.md)** - Complete deployment guide with 3 options:
+
+1. **Vercel + Render + MongoDB Atlas** (Recommended)
+   - Frontend on Vercel (FREE)
+   - Backend on Render (FREE)
+   - Database on MongoDB Atlas (FREE)
+   - Total: $0/month
+   - 30 minutes total setup time
+
+2. **Railway** (All-in-One - 20 minutes)
+   - Deploy both frontend and backend
+   - Built-in MongoDB support
+   - Auto-deploy from GitHub
+   - Simpler configuration
+
+3. **Docker on VPS** (Full Control)
+   - DigitalOcean/AWS/Azure
+   - Docker Compose setup
+   - Nginx + SSL configuration
+   - Best for production environments
+
+### Quick Deployment Links
+- 📖 [Quick Deployment Guide](DEPLOYMENT_QUICKSTART.md) - Step-by-step instructions  
+- 📘 [Detailed Deployment](backend/DEPLOYMENT.md) - Comprehensive deployment options
+- 🧪 [API Testing](backend/API_TESTING.md) - Test your deployed API
+- 🔧 [Setup Guide](SETUP_GUIDE.md) - Local development setup
+
+### Local Docker Deployment
+```bash
+cd backend
+docker-compose up -d
+```
+
+#### Manual Local Deployment
 1. Set NODE_ENV=production
 2. Configure production database
 3. Set secure JWT secrets
