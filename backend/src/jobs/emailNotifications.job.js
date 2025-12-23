@@ -20,13 +20,13 @@ export const checkDueSoonTasks = cron.schedule('0 * * * *', async () => {
       },
       status: { $ne: 'DONE' },
       'notifications.dueSoonSent': { $ne: true }
-    }).populate('owner', 'email firstName lastName');
+    }).populate('assignedTo');
     
     for (const task of dueSoonTasks) {
       const hoursLeft = Math.round((new Date(task.dueDate) - now) / (1000 * 60 * 60));
       
       if (hoursLeft <= 24 && hoursLeft > 0) {
-        await sendTaskDueSoonEmail(task.owner, task, hoursLeft);
+        await sendTaskDueSoonEmail(task.assignedTo, task, hoursLeft); // FIXED
         
         // Mark notification as sent
         task.notifications = task.notifications || {};
@@ -55,10 +55,10 @@ export const checkOverdueTasks = cron.schedule('0 */6 * * *', async () => {
       dueDate: { $lt: now },
       status: { $ne: 'DONE' },
       'notifications.overdueSent': { $ne: true }
-    }).populate('owner', 'email firstName lastName');
+    }).populate('assignedTo', 'email firstName lastName'); // FIXED
     
     for (const task of overdueTasks) {
-      await sendTaskOverdueEmail(task.owner, task);
+      await sendTaskOverdueEmail(task.assignedTo, task); // FIXED
       
       // Mark notification as sent
       task.notifications = task.notifications || {};
@@ -86,7 +86,7 @@ export const sendDailyDigests = cron.schedule('0 8 * * *', async () => {
     
     for (const user of users) {
       // Get user's task statistics
-      const userTasks = await Task.find({ owner: user._id });
+      const userTasks = await Task.find({ assignedTo: user._id }); // FIXED
       
       const stats = {
         total: userTasks.length,
